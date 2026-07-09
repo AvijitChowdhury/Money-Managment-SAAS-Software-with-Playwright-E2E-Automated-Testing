@@ -2,77 +2,77 @@
   {
     "name": "Landing page loads",
     "status": "passed",
-    "duration_ms": 2029,
+    "duration_ms": 2045,
     "error": null,
     "screenshot": "docs/screenshots/01_landing.png"
   },
   {
     "name": "Sign up or sign in admin",
     "status": "passed",
-    "duration_ms": 2157,
+    "duration_ms": 2059,
     "error": null,
     "screenshot": "docs/screenshots/02_auth.png"
   },
   {
     "name": "Dashboard renders KPIs and charts",
     "status": "passed",
-    "duration_ms": 1687,
+    "duration_ms": 1977,
     "error": null,
     "screenshot": "docs/screenshots/03_dashboard.png"
   },
   {
     "name": "Transactions page + add new transaction",
     "status": "passed",
-    "duration_ms": 577,
+    "duration_ms": 1167,
     "error": null,
     "screenshot": "docs/screenshots/04_transactions.png"
   },
   {
     "name": "Wallet page shows accounts",
     "status": "passed",
-    "duration_ms": 1136,
+    "duration_ms": 1170,
     "error": null,
     "screenshot": "docs/screenshots/05_wallet.png"
   },
   {
     "name": "Goals page + add new goal",
     "status": "passed",
-    "duration_ms": 505,
+    "duration_ms": 1230,
     "error": null,
     "screenshot": "docs/screenshots/06_goals.png"
   },
   {
     "name": "Budget page",
     "status": "passed",
-    "duration_ms": 664,
+    "duration_ms": 699,
     "error": null,
     "screenshot": "docs/screenshots/07_budget.png"
   },
   {
     "name": "Analytics page renders charts",
     "status": "passed",
-    "duration_ms": 1629,
+    "duration_ms": 1668,
     "error": null,
     "screenshot": "docs/screenshots/08_analytics.png"
   },
   {
     "name": "Settings page",
     "status": "passed",
-    "duration_ms": 653,
+    "duration_ms": 709,
     "error": null,
     "screenshot": "docs/screenshots/09_settings.png"
   },
   {
     "name": "Bengali language toggle",
     "status": "passed",
-    "duration_ms": 1318,
+    "duration_ms": 1270,
     "error": null,
     "screenshot": "docs/screenshots/10_bengali.png"
   },
   {
     "name": "Logout returns to auth page",
     "status": "passed",
-    "duration_ms": 438,
+    "duration_ms": 441,
     "error": null,
     "screenshot": "docs/screenshots/11_logout.png"
   }
