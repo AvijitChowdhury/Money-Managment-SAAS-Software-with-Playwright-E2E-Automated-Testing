@@ -4,6 +4,37 @@ import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/")({
   ssr: false,
+  head: () => ({
+    meta: [
+      { title: "Smart Money Manager — Agency finance, bilingual" },
+      { name: "description", content: "Bilingual (English/Bengali) money management SaaS for digital, creative and software agencies. Track cash flow, invoices, budgets and goals." },
+      { property: "og:title", content: "Smart Money Manager — Agency finance, bilingual" },
+      { property: "og:description", content: "Centralize cash flow, invoicing, budgets, and goals in one bilingual workspace built for agencies." },
+      { property: "og:url", content: "/" },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Easy Life",
+          url: "/",
+          brand: "Smart Money Manager",
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "Smart Money Manager",
+          url: "/",
+        }),
+      },
+    ],
+  }),
   beforeLoad: async () => {
     const { data } = await supabase.auth.getSession();
     if (data.session) throw redirect({ to: "/dashboard" });
