@@ -65,23 +65,23 @@ function SettingsPage() {
       <div className="bg-card border rounded-2xl p-6 shadow-sm max-w-2xl">
         <div className="grid gap-4">
           <div>
-            <label className="text-xs text-muted-foreground">{t("auth.email")}</label>
-            <div className="mt-1 text-sm">{user?.email}</div>
+            <label className="text-xs text-muted-foreground" htmlFor="settings-email">{t("auth.email")}</label>
+            <div id="settings-email" className="mt-1 text-sm">{user?.email}</div>
           </div>
           <div>
-            <label className="text-xs text-muted-foreground">{t("auth.fullName")}</label>
-            <input className="mt-1 w-full rounded-full border px-4 py-2 text-sm" value={fullName} onChange={(e) => setFullName(e.target.value)} />
+            <label className="text-xs text-muted-foreground" htmlFor="settings-fullname">{t("auth.fullName")}</label>
+            <input id="settings-fullname" className="mt-1 w-full rounded-full border px-4 py-2 text-sm" value={fullName} onChange={(e) => setFullName(e.target.value)} />
           </div>
           <div>
-            <label className="text-xs text-muted-foreground">{t("settings.language")}</label>
-            <select className="mt-1 w-full rounded-full border px-4 py-2 text-sm bg-background" value={lang} onChange={(e) => setLang(e.target.value)}>
+            <label className="text-xs text-muted-foreground" htmlFor="settings-language">{t("settings.language")}</label>
+            <select id="settings-language" className="mt-1 w-full rounded-full border px-4 py-2 text-sm bg-background" value={lang} onChange={(e) => setLang(e.target.value)}>
               <option value="en">English</option>
               <option value="bn">বাংলা (Bengali)</option>
             </select>
           </div>
           <div>
-            <label className="text-xs text-muted-foreground">{t("settings.currency")}</label>
-            <select className="mt-1 w-full rounded-full border px-4 py-2 text-sm bg-background" value={currency} onChange={(e) => setCurrency(e.target.value)}>
+            <label className="text-xs text-muted-foreground" htmlFor="settings-currency">{t("settings.currency")}</label>
+            <select id="settings-currency" className="mt-1 w-full rounded-full border px-4 py-2 text-sm bg-background" value={currency} onChange={(e) => setCurrency(e.target.value)}>
               <option value="USD">USD ($)</option>
               <option value="BDT">BDT (৳)</option>
               <option value="EUR">EUR (€)</option>
