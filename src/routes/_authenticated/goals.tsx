@@ -8,6 +8,17 @@ import { useState } from "react";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/_authenticated/goals")({
+  head: () => ({
+    meta: [
+      { title: "Goals — Smart Money Manager" },
+      { name: "description", content: "Track savings goals and progress toward agency financial milestones." },
+      { property: "og:title", content: "Goals — Smart Money Manager" },
+      { property: "og:description", content: "Track savings goals for your agency." },
+      { property: "og:url", content: "/goals" },
+      { name: "robots", content: "noindex" },
+    ],
+    links: [{ rel: "canonical", href: "/goals" }],
+  }),
   component: GoalsPage,
 });
 
