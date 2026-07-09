@@ -142,7 +142,9 @@ async def test_auth(page: Page):
 @step("Dashboard renders KPIs and charts")
 async def test_dashboard(page: Page):
     await page.wait_for_selector('[data-testid=kpi-row]')
-    await page.wait_for_timeout(1500)  # let charts render
+    # wait for seed to complete + charts to render
+    await page.wait_for_function("!!document.body.innerText.match(/\\$[1-9]/)", timeout=15000)
+    await page.wait_for_timeout(1500)
     return await screenshot(page, "03_dashboard")
 
 
