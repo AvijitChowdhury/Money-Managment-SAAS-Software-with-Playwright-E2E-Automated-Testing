@@ -8,6 +8,17 @@ import { useState } from "react";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/_authenticated/transactions")({
+  head: () => ({
+    meta: [
+      { title: "Transactions — Smart Money Manager" },
+      { name: "description", content: "Log, filter and export your agency's income and expense transactions." },
+      { property: "og:title", content: "Transactions — Smart Money Manager" },
+      { property: "og:description", content: "Agency transaction ledger with CSV export." },
+      { property: "og:url", content: "/transactions" },
+      { name: "robots", content: "noindex" },
+    ],
+    links: [{ rel: "canonical", href: "/transactions" }],
+  }),
   component: TransactionsPage,
 });
 
@@ -109,13 +120,13 @@ function TransactionsPage() {
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-6 z-50">
           <form onSubmit={submit} className="bg-card rounded-2xl p-6 w-full max-w-md flex flex-col gap-3" data-testid="add-txn-form">
             <h2 className="text-lg font-bold">New transaction</h2>
-            <input required placeholder="Payment name" className="rounded-full border px-4 py-2 text-sm" value={form.payment_name} data-testid="txn-name" onChange={(e) => setForm({ ...form, payment_name: e.target.value })} />
-            <input required type="number" step="0.01" placeholder="Amount" className="rounded-full border px-4 py-2 text-sm" value={form.amount} data-testid="txn-amount" onChange={(e) => setForm({ ...form, amount: e.target.value })} />
-            <select className="rounded-full border px-4 py-2 text-sm" value={form.kind} data-testid="txn-kind" onChange={(e) => setForm({ ...form, kind: e.target.value })}>
+            <input required placeholder="Payment name" aria-label="Payment name" className="rounded-full border px-4 py-2 text-sm" value={form.payment_name} data-testid="txn-name" onChange={(e) => setForm({ ...form, payment_name: e.target.value })} />
+            <input required type="number" step="0.01" placeholder="Amount" aria-label="Amount" className="rounded-full border px-4 py-2 text-sm" value={form.amount} data-testid="txn-amount" onChange={(e) => setForm({ ...form, amount: e.target.value })} />
+            <select aria-label="Transaction kind" className="rounded-full border px-4 py-2 text-sm" value={form.kind} data-testid="txn-kind" onChange={(e) => setForm({ ...form, kind: e.target.value })}>
               <option value="expense">Expense</option>
               <option value="income">Income</option>
             </select>
-            <input placeholder="Method" className="rounded-full border px-4 py-2 text-sm" value={form.method} onChange={(e) => setForm({ ...form, method: e.target.value })} />
+            <input placeholder="Method" aria-label="Payment method" className="rounded-full border px-4 py-2 text-sm" value={form.method} onChange={(e) => setForm({ ...form, method: e.target.value })} />
             <div className="flex gap-2 justify-end">
               <button type="button" onClick={() => setOpen(false)} className="rounded-full border px-4 py-2 text-sm">{t("common.cancel")}</button>
               <button type="submit" data-testid="txn-submit" className="rounded-full bg-lime text-lime-foreground font-semibold px-4 py-2 text-sm">{t("common.save")}</button>

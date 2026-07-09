@@ -7,6 +7,17 @@ import { toast } from "sonner";
 
 export const Route = createFileRoute("/auth")({
   ssr: false,
+  head: () => ({
+    meta: [
+      { title: "Sign in — Smart Money Manager" },
+      { name: "description", content: "Sign in or create an account to access your bilingual agency finance workspace." },
+      { property: "og:title", content: "Sign in — Smart Money Manager" },
+      { property: "og:description", content: "Access your bilingual agency finance workspace." },
+      { property: "og:url", content: "/auth" },
+      { name: "robots", content: "noindex" },
+    ],
+    links: [{ rel: "canonical", href: "/auth" }],
+  }),
   component: AuthPage,
 });
 
@@ -65,6 +76,7 @@ function AuthPage() {
             <input
               className="rounded-full border px-4 py-2.5 text-sm bg-background"
               placeholder={t("auth.fullName")}
+              aria-label={t("auth.fullName")}
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
             />
@@ -75,6 +87,7 @@ function AuthPage() {
             data-testid="email-input"
             className="rounded-full border px-4 py-2.5 text-sm bg-background"
             placeholder={t("auth.email")}
+            aria-label={t("auth.email")}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -85,6 +98,7 @@ function AuthPage() {
             data-testid="password-input"
             className="rounded-full border px-4 py-2.5 text-sm bg-background"
             placeholder={t("auth.password")}
+            aria-label={t("auth.password")}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />

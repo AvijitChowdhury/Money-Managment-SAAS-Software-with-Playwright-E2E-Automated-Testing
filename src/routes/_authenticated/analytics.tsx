@@ -7,6 +7,17 @@ import { supabase } from "@/integrations/supabase/client";
 import { AreaChart, Area, XAxis, YAxis, ResponsiveContainer, Tooltip, PieChart, Pie, Cell } from "recharts";
 
 export const Route = createFileRoute("/_authenticated/analytics")({
+  head: () => ({
+    meta: [
+      { title: "Analytics — Smart Money Manager" },
+      { name: "description", content: "Income vs expense trends and spending breakdown by category for your agency finances." },
+      { property: "og:title", content: "Analytics — Smart Money Manager" },
+      { property: "og:description", content: "Trends and category breakdowns for agency finances." },
+      { property: "og:url", content: "/analytics" },
+      { name: "robots", content: "noindex" },
+    ],
+    links: [{ rel: "canonical", href: "/analytics" }],
+  }),
   component: AnalyticsPage,
 });
 

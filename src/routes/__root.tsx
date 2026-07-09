@@ -16,10 +16,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Smart Money Manager — Agency finance, bilingual" },
-      { name: "description", content: "Bilingual (English/Bengali) money management SaaS for digital, creative and software agencies. Track cash flow, invoices, budgets and goals." },
-      { property: "og:title", content: "Smart Money Manager" },
-      { property: "og:description", content: "Bilingual money management for agencies." },
+      { property: "og:site_name", content: "Smart Money Manager" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

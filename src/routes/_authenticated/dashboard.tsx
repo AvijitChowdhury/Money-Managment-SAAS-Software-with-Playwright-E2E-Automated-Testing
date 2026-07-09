@@ -10,6 +10,17 @@ import { LineChart, Line, XAxis, YAxis, ResponsiveContainer, Tooltip, PieChart, 
 import { TrendingUp } from "lucide-react";
 
 export const Route = createFileRoute("/_authenticated/dashboard")({
+  head: () => ({
+    meta: [
+      { title: "Dashboard — Smart Money Manager" },
+      { name: "description", content: "Overview of balances, income, expenses, savings goals and recent transactions for your agency." },
+      { property: "og:title", content: "Dashboard — Smart Money Manager" },
+      { property: "og:description", content: "Agency finance overview at a glance." },
+      { property: "og:url", content: "/dashboard" },
+      { name: "robots", content: "noindex" },
+    ],
+    links: [{ rel: "canonical", href: "/dashboard" }],
+  }),
   component: Dashboard,
 });
 

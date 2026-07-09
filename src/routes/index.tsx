@@ -4,6 +4,37 @@ import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/")({
   ssr: false,
+  head: () => ({
+    meta: [
+      { title: "Smart Money Manager — Agency finance, bilingual" },
+      { name: "description", content: "Bilingual (English/Bengali) money management SaaS for digital, creative and software agencies. Track cash flow, invoices, budgets and goals." },
+      { property: "og:title", content: "Smart Money Manager — Agency finance, bilingual" },
+      { property: "og:description", content: "Centralize cash flow, invoicing, budgets, and goals in one bilingual workspace built for agencies." },
+      { property: "og:url", content: "/" },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Easy Life",
+          url: "/",
+          brand: "Smart Money Manager",
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "Smart Money Manager",
+          url: "/",
+        }),
+      },
+    ],
+  }),
   beforeLoad: async () => {
     const { data } = await supabase.auth.getSession();
     if (data.session) throw redirect({ to: "/dashboard" });
@@ -25,7 +56,7 @@ function Landing() {
         </p>
         <div className="mt-8 flex items-center justify-center gap-3">
           <Link to="/auth" className="rounded-full bg-lime text-lime-foreground font-semibold px-6 py-3 text-sm">Get started</Link>
-          <a href="#features" className="rounded-full border px-6 py-3 text-sm font-semibold">Learn more</a>
+          <a href="#features" className="rounded-full border px-6 py-3 text-sm font-semibold">View agency features</a>
         </div>
       </section>
       <section id="features" className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6 px-6 pb-24">

@@ -8,6 +8,17 @@ import { useState } from "react";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/_authenticated/budget")({
+  head: () => ({
+    meta: [
+      { title: "Budget — Smart Money Manager" },
+      { name: "description", content: "Set category budgets with usage alerts and burn tracking for your agency." },
+      { property: "og:title", content: "Budget — Smart Money Manager" },
+      { property: "og:description", content: "Category budgets and burn tracking for your agency." },
+      { property: "og:url", content: "/budget" },
+      { name: "robots", content: "noindex" },
+    ],
+    links: [{ rel: "canonical", href: "/budget" }],
+  }),
   component: BudgetPage,
 });
 
@@ -87,8 +98,8 @@ function BudgetPage() {
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-6 z-50">
           <form onSubmit={submit} className="bg-card rounded-2xl p-6 w-full max-w-md flex flex-col gap-3">
             <h2 className="text-lg font-bold">New budget</h2>
-            <input required placeholder="Category name" data-testid="budget-cat" className="rounded-full border px-4 py-2 text-sm" value={form.category_name} onChange={(e) => setForm({ ...form, category_name: e.target.value })} />
-            <input required type="number" placeholder="Monthly limit" data-testid="budget-amount" className="rounded-full border px-4 py-2 text-sm" value={form.amount} onChange={(e) => setForm({ ...form, amount: e.target.value })} />
+            <input required placeholder="Category name" aria-label="Category name" data-testid="budget-cat" className="rounded-full border px-4 py-2 text-sm" value={form.category_name} onChange={(e) => setForm({ ...form, category_name: e.target.value })} />
+            <input required type="number" placeholder="Monthly limit" aria-label="Monthly limit" data-testid="budget-amount" className="rounded-full border px-4 py-2 text-sm" value={form.amount} onChange={(e) => setForm({ ...form, amount: e.target.value })} />
             <div className="flex gap-2 justify-end">
               <button type="button" onClick={() => setOpen(false)} className="rounded-full border px-4 py-2 text-sm">{t("common.cancel")}</button>
               <button type="submit" data-testid="budget-submit" className="rounded-full bg-lime text-lime-foreground font-semibold px-4 py-2 text-sm">{t("common.save")}</button>
