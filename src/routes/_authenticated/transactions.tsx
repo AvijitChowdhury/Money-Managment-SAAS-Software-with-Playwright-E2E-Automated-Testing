@@ -58,9 +58,14 @@ function TransactionsPage() {
   };
 
   const exportCsv = () => {
-    const header = "date,amount,kind,payment_name,method,status\n";
+    const csvCell = (v: unknown) => {
+      const s = v == null ? "" : String(v);
+      const safe = /^[=+\-@\t\r]/.test(s) ? `'${s}` : s;
+      return `"${safe.replace(/"/g, '""')}"`;
+    };
+    const header = ["date", "amount", "kind", "payment_name", "method", "status"].map(csvCell).join(",") + "\n";
     const rows = txns
-      .map((t) => `${t.occurred_at},${t.amount},${t.kind},"${t.payment_name}",${t.method ?? ""},${t.status}`)
+      .map((t) => [t.occurred_at, t.amount, t.kind, t.payment_name, t.method ?? "", t.status].map(csvCell).join(","))
       .join("\n");
     const blob = new Blob([header + rows], { type: "text/csv" });
     const url = URL.createObjectURL(blob);
