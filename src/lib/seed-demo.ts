@@ -8,7 +8,7 @@ export async function seedDemoDataIfEmpty(userId: string) {
     .eq("user_id", userId);
   if ((count ?? 0) > 0) return;
 
-  const { data: accounts } = await supabase
+  const { data: accounts, error: accErr } = await supabase
     .from("accounts")
     .insert([
       { user_id: userId, name: "VISA", type: "card", masked_number: "**** 4511", balance: 5500, currency: "USD" },
@@ -16,6 +16,7 @@ export async function seedDemoDataIfEmpty(userId: string) {
       { user_id: userId, name: "Payoneer", type: "wallet", masked_number: "****86@email.com", balance: 7700, currency: "USD" },
     ])
     .select();
+  if (accErr) console.error("[seed] accounts:", accErr);
 
   const acctId = (i: number) => accounts?.[i]?.id ?? null;
 
