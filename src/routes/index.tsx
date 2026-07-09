@@ -56,7 +56,7 @@ function Landing() {
         </p>
         <div className="mt-8 flex items-center justify-center gap-3">
           <Link to="/auth" className="rounded-full bg-lime text-lime-foreground font-semibold px-6 py-3 text-sm">Get started</Link>
-          <a href="#features" className="rounded-full border px-6 py-3 text-sm font-semibold">Learn more</a>
+          <a href="#features" className="rounded-full border px-6 py-3 text-sm font-semibold">View agency features</a>
         </div>
       </section>
       <section id="features" className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6 px-6 pb-24">
