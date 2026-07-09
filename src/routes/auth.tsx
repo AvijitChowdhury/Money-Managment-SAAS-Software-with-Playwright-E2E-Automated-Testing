@@ -76,6 +76,7 @@ function AuthPage() {
             <input
               className="rounded-full border px-4 py-2.5 text-sm bg-background"
               placeholder={t("auth.fullName")}
+              aria-label={t("auth.fullName")}
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
             />
@@ -86,6 +87,7 @@ function AuthPage() {
             data-testid="email-input"
             className="rounded-full border px-4 py-2.5 text-sm bg-background"
             placeholder={t("auth.email")}
+            aria-label={t("auth.email")}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -96,6 +98,7 @@ function AuthPage() {
             data-testid="password-input"
             className="rounded-full border px-4 py-2.5 text-sm bg-background"
             placeholder={t("auth.password")}
+            aria-label={t("auth.password")}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
