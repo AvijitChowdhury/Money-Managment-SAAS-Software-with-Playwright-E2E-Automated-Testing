@@ -7,6 +7,17 @@ import { toast } from "sonner";
 
 export const Route = createFileRoute("/auth")({
   ssr: false,
+  head: () => ({
+    meta: [
+      { title: "Sign in — Smart Money Manager" },
+      { name: "description", content: "Sign in or create an account to access your bilingual agency finance workspace." },
+      { property: "og:title", content: "Sign in — Smart Money Manager" },
+      { property: "og:description", content: "Access your bilingual agency finance workspace." },
+      { property: "og:url", content: "/auth" },
+      { name: "robots", content: "noindex" },
+    ],
+    links: [{ rel: "canonical", href: "/auth" }],
+  }),
   component: AuthPage,
 });
 
