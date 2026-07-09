@@ -9,6 +9,17 @@ import { toast } from "sonner";
 import i18n from "@/lib/i18n";
 
 export const Route = createFileRoute("/_authenticated/settings")({
+  head: () => ({
+    meta: [
+      { title: "Settings — Smart Money Manager" },
+      { name: "description", content: "Manage profile, language and currency preferences for your workspace." },
+      { property: "og:title", content: "Settings — Smart Money Manager" },
+      { property: "og:description", content: "Profile, language and currency preferences." },
+      { property: "og:url", content: "/settings" },
+      { name: "robots", content: "noindex" },
+    ],
+    links: [{ rel: "canonical", href: "/settings" }],
+  }),
   component: SettingsPage,
 });
 
