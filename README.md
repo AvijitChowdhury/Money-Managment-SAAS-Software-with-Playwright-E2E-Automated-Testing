@@ -235,6 +235,8 @@ flowchart TD
 
 ### Allure-style report
 
+![allure report](docs/screenshots/12_allure_report.png)
+
 The suite emits an HTML dashboard at [`docs/allure/index.html`](docs/allure/index.html):
 
 - Green/red pass summary cards (total / passed / failed / duration)
