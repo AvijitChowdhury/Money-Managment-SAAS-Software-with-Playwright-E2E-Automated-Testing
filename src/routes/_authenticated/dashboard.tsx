@@ -20,7 +20,7 @@ function Dashboard() {
   const { user } = useAuth();
 
   useEffect(() => {
-    if (user?.id) seedDemoDataIfEmpty(user.id);
+    if (user?.id) seedDemoDataIfEmpty(user.id).catch(console.error);
   }, [user?.id]);
 
   const { data: profile } = useQuery({
