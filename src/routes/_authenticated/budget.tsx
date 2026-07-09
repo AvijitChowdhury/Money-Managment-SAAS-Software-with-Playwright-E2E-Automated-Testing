@@ -8,6 +8,17 @@ import { useState } from "react";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/_authenticated/budget")({
+  head: () => ({
+    meta: [
+      { title: "Budget — Smart Money Manager" },
+      { name: "description", content: "Set category budgets with usage alerts and burn tracking for your agency." },
+      { property: "og:title", content: "Budget — Smart Money Manager" },
+      { property: "og:description", content: "Category budgets and burn tracking for your agency." },
+      { property: "og:url", content: "/budget" },
+      { name: "robots", content: "noindex" },
+    ],
+    links: [{ rel: "canonical", href: "/budget" }],
+  }),
   component: BudgetPage,
 });
 
