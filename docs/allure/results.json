@@ -2,77 +2,77 @@
   {
     "name": "Landing page loads",
     "status": "passed",
-    "duration_ms": 2030,
+    "duration_ms": 2029,
     "error": null,
     "screenshot": "docs/screenshots/01_landing.png"
   },
   {
     "name": "Sign up or sign in admin",
     "status": "passed",
-    "duration_ms": 1946,
+    "duration_ms": 2157,
     "error": null,
     "screenshot": "docs/screenshots/02_auth.png"
   },
   {
     "name": "Dashboard renders KPIs and charts",
     "status": "passed",
-    "duration_ms": 1919,
+    "duration_ms": 1687,
     "error": null,
     "screenshot": "docs/screenshots/03_dashboard.png"
   },
   {
     "name": "Transactions page + add new transaction",
-    "status": "failed",
-    "duration_ms": 8302,
-    "error": "TimeoutError: Page.wait_for_selector: Timeout 8000ms exceeded.\nCall log:\n  - waiting for locator(\"text=E2E Test Coffee\") to be visible\n\nTraceback (most recent call last):\n  File \"/dev-server/tests/e2e/run.py\", line 90, in wrapper\n    shot = await fn(page, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/dev-server/tests/e2e/run.py\", line 152, in test_transactions\n    await TransactionsPage(page).add(\"E2E Test Coffee\", \"12.50\", \"expense\")\n  File \"/dev-server/tests/e2e/run.py\", line 66, in add\n    await self.page.wait_for_selector(f'text={name}', timeout=8000)\n  File \"/nix/store/lvdrkmk2shc2qwqd9gl77bph8v3pb214-sandbox-python-env/lib/python3.13/site-packages/playwright/async_api/_generated.py\", line 8181, in wait_for_selector\n    await self._impl_obj.wait_for_selector(\n        selector=selector, timeout=timeout, state=state, strict=strict\n    )\n  File \"/nix/store/lvdrkmk2shc2qwqd9gl77bph8v3pb214-sandbox-python-env/lib/python3.13/site-packages/playwright/_impl/_page.py\", line 422, in wait_for_selector\n    return await self._main_frame.wait_for_selector(**locals_to_params(locals()))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nix/store/lvdrkmk2shc2qwqd9gl77bph8v3pb214-sandbox-python-env/lib/python3.13/site-packages/playwright/_impl/_frame.py\", line 369, in wait_for_selector\n    await self._channel.send(\n        \"waitForSelector\", self._timeout, locals_to_params(locals())\n    )\n  File \"/nix/store/lvdrkmk2shc2qwqd9gl77bph8v3pb214-sandbox-python-env/lib/python3.13/site-packages/playwright/_impl/_connection.py\", line 69, in send\n    return await self._connection.wrap_api_call(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<3 lines>...\n    )\n    ^\n  File \"/nix/store/lvdrkmk2shc2qwqd9gl77bph8v3pb214-sandbox-python-env/lib/python3.13/site-packages/playwright/_impl/_connection.py\", line 559, in wrap_api_call\n    raise rewrite_error(error, f\"{parsed_st['apiName']}: {error}\") from None\nplaywright._impl._errors.TimeoutError: Page.wait_for_selector: Timeout 8000ms exceeded.\nCall log:\n  - waiting for locator(\"text=E2E Test Coffee\") to be visible\n\n",
-    "screenshot": "docs/screenshots/FAIL_transactions_page__add_new_transaction.png"
+    "status": "passed",
+    "duration_ms": 577,
+    "error": null,
+    "screenshot": "docs/screenshots/04_transactions.png"
   },
   {
     "name": "Wallet page shows accounts",
     "status": "passed",
-    "duration_ms": 1124,
+    "duration_ms": 1136,
     "error": null,
     "screenshot": "docs/screenshots/05_wallet.png"
   },
   {
     "name": "Goals page + add new goal",
-    "status": "failed",
-    "duration_ms": 8294,
-    "error": "TimeoutError: Page.wait_for_selector: Timeout 8000ms exceeded.\nCall log:\n  - waiting for locator(\"text=E2E Test Camera\") to be visible\n\nTraceback (most recent call last):\n  File \"/dev-server/tests/e2e/run.py\", line 90, in wrapper\n    shot = await fn(page, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/dev-server/tests/e2e/run.py\", line 166, in test_goals\n    await GoalsPage(page).add(\"E2E Test Camera\", \"999\")\n  File \"/dev-server/tests/e2e/run.py\", line 78, in add\n    await self.page.wait_for_selector(f'text={name}', timeout=8000)\n  File \"/nix/store/lvdrkmk2shc2qwqd9gl77bph8v3pb214-sandbox-python-env/lib/python3.13/site-packages/playwright/async_api/_generated.py\", line 8181, in wait_for_selector\n    await self._impl_obj.wait_for_selector(\n        selector=selector, timeout=timeout, state=state, strict=strict\n    )\n  File \"/nix/store/lvdrkmk2shc2qwqd9gl77bph8v3pb214-sandbox-python-env/lib/python3.13/site-packages/playwright/_impl/_page.py\", line 422, in wait_for_selector\n    return await self._main_frame.wait_for_selector(**locals_to_params(locals()))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nix/store/lvdrkmk2shc2qwqd9gl77bph8v3pb214-sandbox-python-env/lib/python3.13/site-packages/playwright/_impl/_frame.py\", line 369, in wait_for_selector\n    await self._channel.send(\n        \"waitForSelector\", self._timeout, locals_to_params(locals())\n    )\n  File \"/nix/store/lvdrkmk2shc2qwqd9gl77bph8v3pb214-sandbox-python-env/lib/python3.13/site-packages/playwright/_impl/_connection.py\", line 69, in send\n    return await self._connection.wrap_api_call(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<3 lines>...\n    )\n    ^\n  File \"/nix/store/lvdrkmk2shc2qwqd9gl77bph8v3pb214-sandbox-python-env/lib/python3.13/site-packages/playwright/_impl/_connection.py\", line 559, in wrap_api_call\n    raise rewrite_error(error, f\"{parsed_st['apiName']}: {error}\") from None\nplaywright._impl._errors.TimeoutError: Page.wait_for_selector: Timeout 8000ms exceeded.\nCall log:\n  - waiting for locator(\"text=E2E Test Camera\") to be visible\n\n",
-    "screenshot": "docs/screenshots/FAIL_goals_page__add_new_goal.png"
+    "status": "passed",
+    "duration_ms": 505,
+    "error": null,
+    "screenshot": "docs/screenshots/06_goals.png"
   },
   {
     "name": "Budget page",
     "status": "passed",
-    "duration_ms": 653,
+    "duration_ms": 664,
     "error": null,
     "screenshot": "docs/screenshots/07_budget.png"
   },
   {
     "name": "Analytics page renders charts",
     "status": "passed",
-    "duration_ms": 1621,
+    "duration_ms": 1629,
     "error": null,
     "screenshot": "docs/screenshots/08_analytics.png"
   },
   {
     "name": "Settings page",
     "status": "passed",
-    "duration_ms": 641,
+    "duration_ms": 653,
     "error": null,
     "screenshot": "docs/screenshots/09_settings.png"
   },
   {
     "name": "Bengali language toggle",
     "status": "passed",
-    "duration_ms": 1154,
+    "duration_ms": 1318,
     "error": null,
     "screenshot": "docs/screenshots/10_bengali.png"
   },
   {
     "name": "Logout returns to auth page",
     "status": "passed",
-    "duration_ms": 507,
+    "duration_ms": 438,
     "error": null,
     "screenshot": "docs/screenshots/11_logout.png"
   }
