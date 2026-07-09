@@ -5,7 +5,21 @@
 ![status](https://img.shields.io/badge/tests-11%2F11%20passing-a3e635?style=flat-square)
 ![stack](https://img.shields.io/badge/stack-TanStack%20Start%20%2B%20React%2019%20%2B%20Supabase-0f172a?style=flat-square)
 ![i18n](https://img.shields.io/badge/i18n-EN%20%2F%20BN-a3e635?style=flat-square)
+![seo](https://img.shields.io/badge/SEO-audit%20clean-a3e635?style=flat-square)
+![security](https://img.shields.io/badge/security-hardened-a3e635?style=flat-square)
 ![license](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
+
+---
+
+## 🆕 Recent updates
+
+- **SEO pass (audit-clean):** per-route `head()` metadata on every route (unique `title`, `description`, `og:*`, canonical `<link>`), `noindex` on authenticated routes, JSON-LD (`Organization` + `WebSite`) on the landing page, `public/robots.txt`, `public/llms.txt`, and a dynamic `/sitemap.xml` server route.
+- **Accessibility:** `aria-label` on every form input across auth, transactions, budget, and goals; `htmlFor`/`id` associations on settings labels.
+- **Security hardening:**
+  - **CSV formula-injection fix** in the transactions export — every cell is quoted, `"` is escaped as `""`, and cells starting with `= + - @ \t \r` are prefixed with `'` to neutralise spreadsheet formula evaluation.
+  - **HIBP leaked-password protection enabled** on Supabase auth.
+  - Documented the canonical `has_role()` `SECURITY DEFINER` pattern in `@security-memory` — invoker-side `EXECUTE` is required for RLS to evaluate the policy and is not an escalation vector.
+- **Full E2E re-verification:** landing, auth (sign-up + sign-in), dashboard KPIs/charts, transactions add + CSV download, wallet, goals add, budget, analytics, settings, EN↔BN toggle, and logout — all green.
 
 ---
 
@@ -13,11 +27,12 @@
 
 - **Bilingual UI (EN / BN)** — one-tap language toggle in the sidebar; all labels, headers, tables and status pills are translated. Bengali script rendered natively (UTF-8, Noto/system).
 - **"EASY LIFE" design system** — dark charcoal sidebar, neon-lime accent, pill buttons, rounded cards, soft shadows. Faithful port of the provided design.
-- **Full auth** — email/password sign-in and sign-up. Seeded admin (`abhichy30@gmail.com` / `12345678`) auto-granted the `admin` role via a database trigger.
+- **Full auth** — email/password sign-in and sign-up, with HIBP leaked-password protection enabled. Seeded admin (`abhichy30@gmail.com` / `12345678`) auto-granted the `admin` role via a database trigger.
 - **Row-Level Security everywhere** — every table (`profiles`, `accounts`, `transactions`, `categories`, `goals`, `budgets`, `user_roles`) is protected. Admins additionally see all rows via a `SECURITY DEFINER` role-check function (`has_role`).
 - **Auto-seeded demo data** — first login populates realistic accounts, categories, transactions, goals and budgets so the UI is never empty.
 - **Charts & analytics** — recharts line, bar, area and donut charts for money-flow, per-day activity, income vs expense, and category breakdown.
-- **CSV export** on the transactions page.
+- **CSV export** on the transactions page — hardened against spreadsheet formula-injection.
+- **SEO-ready** — per-route metadata, canonical URLs, `robots.txt`, `llms.txt`, dynamic `sitemap.xml`, and JSON-LD structured data on the landing page.
 - **Custom Playwright E2E suite** (Python, Page Object Model, headless Chromium) with Allure-style HTML report.
 
 ---
