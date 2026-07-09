@@ -7,6 +7,17 @@ import { supabase } from "@/integrations/supabase/client";
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Tooltip } from "recharts";
 
 export const Route = createFileRoute("/_authenticated/wallet")({
+  head: () => ({
+    meta: [
+      { title: "Wallet — Smart Money Manager" },
+      { name: "description", content: "Account balances, cards and daily cash flow overview for your agency." },
+      { property: "og:title", content: "Wallet — Smart Money Manager" },
+      { property: "og:description", content: "Balances, cards and daily flow for your agency." },
+      { property: "og:url", content: "/wallet" },
+      { name: "robots", content: "noindex" },
+    ],
+    links: [{ rel: "canonical", href: "/wallet" }],
+  }),
   component: WalletPage,
 });
 
