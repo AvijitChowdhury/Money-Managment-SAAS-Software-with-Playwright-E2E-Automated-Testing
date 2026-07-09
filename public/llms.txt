@@ -1,0 +1,9 @@
+# Smart Money Manager
+
+> Bilingual (English/Bengali) money management SaaS for digital, creative and software agencies. Track cash flow, invoices, budgets and goals.
+
+Smart Money Manager (by Easy Life) centralizes agency finances — balances, transactions, budgets with alerts, savings goals, and analytics — in one workspace with an instant English ↔ Bengali toggle.
+
+## Pages
+
+- [Home](/): Product overview and features for agencies.
