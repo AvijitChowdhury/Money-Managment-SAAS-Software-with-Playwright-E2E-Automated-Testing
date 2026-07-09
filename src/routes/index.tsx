@@ -9,7 +9,7 @@ export const Route = createFileRoute("/")({
       { title: "Smart Money Manager — Agency finance, bilingual" },
       { name: "description", content: "Bilingual (English/Bengali) money management SaaS for digital, creative and software agencies. Track cash flow, invoices, budgets and goals." },
       { property: "og:title", content: "Smart Money Manager — Agency finance, bilingual" },
-      { property: "og:description", content: "Centralize cash flow, invoicing, budgets, and goals in one bilingual workspace built for agencies." },
+      { property: "og:description", content: "Bilingual (English/Bengali) money management SaaS for digital, creative and software agencies. Track cash flow, invoices, budgets and goals." },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
