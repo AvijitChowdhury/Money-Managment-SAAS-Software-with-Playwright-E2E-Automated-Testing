@@ -8,6 +8,17 @@ import { useState } from "react";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/_authenticated/transactions")({
+  head: () => ({
+    meta: [
+      { title: "Transactions — Smart Money Manager" },
+      { name: "description", content: "Log, filter and export your agency's income and expense transactions." },
+      { property: "og:title", content: "Transactions — Smart Money Manager" },
+      { property: "og:description", content: "Agency transaction ledger with CSV export." },
+      { property: "og:url", content: "/transactions" },
+      { name: "robots", content: "noindex" },
+    ],
+    links: [{ rel: "canonical", href: "/transactions" }],
+  }),
   component: TransactionsPage,
 });
 
